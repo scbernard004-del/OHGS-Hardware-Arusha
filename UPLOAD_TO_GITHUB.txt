@@ -1,0 +1,33 @@
+OHGS WEBSITE — SIMPLE GITHUB UPLOAD
+
+This package is ready to upload directly to the ROOT of your GitHub repository.
+
+1. Extract OHGS_GITHUB_UPLOAD_READY.zip on your phone or computer.
+2. In the GitHub repository, choose Add file > Upload files.
+3. GitHub accepts up to 100 files in one browser upload, so upload in two batches:
+   - Batch 1: all root files plus the api folder. Do not include the media folder yet.
+   - Batch 2: upload the complete media folder.
+4. Do not upload the ZIP itself or the outer extracted folder.
+5. Check that index.html is visible at the repository root, beside products.html.
+6. Commit the files with a message such as: Deploy OHGS v31 final light-mode contrast fix.
+
+IMPORTANT CHECKS AFTER DEPLOYMENT:
+- Open /version-check.txt on the deployed domain. It must say v31-final-light-mode-contrast.
+- Change the language to Kiswahili and confirm the page content and browser-tab title both change.
+- On a phone, confirm the OHGS wordmark is dark and clear in light mode, bright in dark mode, and the menu icon is easy to see. On very narrow phones the text wordmark hides cleanly and the round OHGS logo remains visible.
+- Check Home, Products, Services, Gallery and Contact: headings, descriptions, labels and buttons must remain readable without horizontal scrolling.
+- On Home, check the construction campaign in light mode: its heading and description must be dark and clear on a pale cream/blue background, while poster captions remain bright on their dark cards.
+- The icon shows the current mode: moon means dark and sun means light. Tap it twice and confirm the full page and browser bar change each time.
+- The Home video area must use compact labels, two clear action buttons and six videos: three in the first customer section and three more below.
+- Gallery must contain all nine videos with short, easy-to-scan captions.
+If these checks fail, Vercel is connected to the wrong repository, branch, or root directory.
+This package includes fresh v31 cache keys, one early theme controller, explicit mobile color palettes, a valid Vercel catch-all header rule, a safe static build command and a fixed dist output, so mobile browsers and Vercel publish this exact release instead of mixing old CSS and new JavaScript.
+
+The only source folders are:
+- media — page photos, all nine videos, posters, and share images
+- api — the optional contact-email function
+
+Important: the logo and the photo at the top of every customer page are also embedded
+inside each HTML file. They remain visible even if GitHub takes time to serve media.
+
+Never upload a real SMTP password to GitHub. Add SMTP_PASS only in Vercel Environment Variables.
